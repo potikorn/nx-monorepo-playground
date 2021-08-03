@@ -4,22 +4,13 @@
     "defaultBase": "master"
   },
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
     ".eslintrc.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
@@ -31,5 +22,26 @@
       }
     ]
   },
-  "projects": {}
+  "projects": {
+    "bike-store": {
+      "tags": []
+    },
+    "bike-store-api": {
+      "tags": []
+    },
+    "bike-store-e2e": {
+      "tags": [],
+      "implicitDependencies": ["bike-store"]
+    },
+    "bike-utils": {
+      "tags": []
+    },
+    "car-store": {
+      "tags": []
+    },
+    "car-store-e2e": {
+      "tags": [],
+      "implicitDependencies": ["car-store"]
+    }
+  }
 }
